@@ -1,8 +1,6 @@
 package lk.ijse.dep.pos.business.custom.impl;
 
 import lk.ijse.dep.pos.business.custom.OrderBO;
-import lk.ijse.dep.pos.dao.DAOFactory;
-import lk.ijse.dep.pos.dao.DAOTypes;
 import lk.ijse.dep.pos.dao.custom.*;
 import lk.ijse.dep.pos.db.HibernateUtil;
 import lk.ijse.dep.pos.dto.OrderDTO;
@@ -11,7 +9,6 @@ import lk.ijse.dep.pos.dto.OrderDetailDTO;
 import lk.ijse.dep.pos.entity.*;
 import org.hibernate.Session;
 
-import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
