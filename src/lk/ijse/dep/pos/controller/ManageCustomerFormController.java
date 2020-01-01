@@ -19,19 +19,17 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.dep.pos.AppInitializer;
 import lk.ijse.dep.pos.business.custom.CustomerBO;
 import lk.ijse.dep.pos.business.exception.AlreadyExistsInOrderException;
 import lk.ijse.dep.pos.dto.CustomerDTO;
 import lk.ijse.dep.pos.util.CustomerTM;
-import net.sf.jasperreports.engine.*;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.engine.xml.JRXmlLoader;
-import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
+import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -58,7 +56,7 @@ public class ManageCustomerFormController implements Initializable {
     @FXML
     private TableView<CustomerTM> tblCustomers;
 
-    private CustomerBO customerBO = BOFactory.getInstance().getBO(BOTypes.CUSTOMER);
+    private CustomerBO customerBO = AppInitializer.ctx.getBean(CustomerBO.class);
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -106,8 +104,8 @@ public class ManageCustomerFormController implements Initializable {
         });
     }
 
-    public void btnReport_OnAction(ActionEvent actionEvent) throws JRException {
-        JasperDesign jasperDesign = JRXmlLoader.
+    public void btnReport_OnAction(ActionEvent actionEvent) {
+        /*JasperDesign jasperDesign = JRXmlLoader.
                 load(this.getClass().
                         getResourceAsStream("/lk/ijse/dep/pos/report/bean-report.jrxml"));
 
@@ -117,7 +115,7 @@ public class ManageCustomerFormController implements Initializable {
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport,
                 params, new JRBeanCollectionDataSource(tblCustomers.getItems()));
 
-        JasperViewer.viewReport(jasperPrint);
+        JasperViewer.viewReport(jasperPrint);*/
     }
 
     @FXML
