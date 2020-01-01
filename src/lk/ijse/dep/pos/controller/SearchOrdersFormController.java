@@ -12,12 +12,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.dep.pos.business.BOFactory;
-import lk.ijse.dep.pos.business.BOTypes;
 import lk.ijse.dep.pos.business.custom.OrderBO;
 import lk.ijse.dep.pos.dto.OrderDTO2;
 import lk.ijse.dep.pos.entity.CustomEntity;
-import lk.ijse.dep.pos.util.OrderTM;
 
 import java.io.IOException;
 import java.net.URL;

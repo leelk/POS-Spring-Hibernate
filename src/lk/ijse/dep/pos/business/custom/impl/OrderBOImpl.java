@@ -8,18 +8,26 @@ import lk.ijse.dep.pos.dto.OrderDTO2;
 import lk.ijse.dep.pos.dto.OrderDetailDTO;
 import lk.ijse.dep.pos.entity.*;
 import org.hibernate.Session;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Component
 public class OrderBOImpl implements OrderBO {
 
-    private OrderDAO orderDAO = DAOFactory.getInstance().getDAO(DAOTypes.ORDER);
-    private OrderDetailDAO orderDetailDAO = DAOFactory.getInstance().getDAO(DAOTypes.ORDER_DETAIL);
-    private ItemDAO itemDAO = DAOFactory.getInstance().getDAO(DAOTypes.ITEM);
-    private QueryDAO queryDAO = DAOFactory.getInstance().getDAO(DAOTypes.QUERY);
-    private CustomerDAO customerDAO = DAOFactory.getInstance().getDAO(DAOTypes.CUSTOMER);
+    @Autowired
+    private OrderDAO orderDAO;
+    @Autowired
+    private OrderDetailDAO orderDetailDAO;
+    @Autowired
+    private ItemDAO itemDAO;
+    @Autowired
+    private QueryDAO queryDAO;
+    @Autowired
+    private CustomerDAO customerDAO;
 
     @Override
     public int getLastOrderId() throws Exception {
